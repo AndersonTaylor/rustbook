@@ -18,15 +18,14 @@ impl Message {
     }
 }
 
-
 fn main() {
-    let home = IpAddr::V4(127,0,0,1);
+    let home = IpAddr::V4(127, 0, 0, 1);
     let loopback = IpAddr::V6(String::from("::1"));
 
     route(home);
     route(loopback);
 
-    let m = Message::Move{ x:3, y:2 };
+    let m = Message::Move { x: 3, y: 2 };
     let m2 = Message::Write(String::from("hello"));
     m.call();
     m2.call();
@@ -46,6 +45,6 @@ fn calc_sum() -> i8 {
     }
 }
 
-fn route(ip_type: IpAddr) { 
+fn route(ip_type: IpAddr) {
     println!("{:?}", ip_type)
 }

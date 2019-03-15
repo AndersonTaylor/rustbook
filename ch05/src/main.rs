@@ -14,18 +14,29 @@ impl Rectangle {
 
     // no self param (associated function) use like:    Rectangle::square(2)
     fn square(side: u32) -> Rectangle {
-        Rectangle { width: side, height:side }
+        Rectangle {
+            width: side,
+            height: side,
+        }
     }
 }
 
 fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+    let rect2 = Rectangle {
+        width: 10,
+        height: 40,
+    };
+    let rect3 = Rectangle {
+        width: 60,
+        height: 45,
+    };
 
-    let rect1 = Rectangle { width: 30, height: 50 };
-    let rect2 = Rectangle { width: 10, height: 40 };
-    let rect3 = Rectangle { width: 60, height: 45 };
-
-
-    println!("The area of the rectange is {} square pixels.",
+    println!(
+        "The area of the rectange is {} square pixels.",
         rect1.area()
     );
 
@@ -34,5 +45,4 @@ fn main() {
     println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
 
     println!("square is {:#?}", Rectangle::square(4));
-
 }
